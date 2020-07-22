@@ -1,0 +1,90 @@
+#3
+"""
+import sys
+
+def name(seq:str)->str :
+    
+    d_name ={"A":"Adenine", "C":"Cytoin", "G":"Guanine", "T":"Thymine", "U":"Uracil"}
+    name =""
+    for i in seq:
+        name += d_name[i]
+    return name
+
+if __name__=="__main__":
+    if len(sys.argv) !=2:
+        print(f"#usage:python {sys.argv[0]}[string]")
+        sys.exit()
+
+seq = sys.argv[1]
+a1 = name(seq)
+print(a1)
+
+
+#4 
+import sys
+
+if len(sys.argv) !=2:
+    print(f"#usage: python{sys.argv[0]}[txt]")
+    sys.exit()
+
+n = int(sys.argv[1])
+
+try:
+    result = 10%n
+    print(result)
+except ZeroDivisionError: 
+    print("n값이 0입니다")
+
+    
+#함수이용
+import sys
+
+if len(sys.argv) !=2:
+    print(f"#usage: python{sys.argv[0]}[txt]")
+    sys.exit()
+
+n= int(sys.argv[1])
+
+def cal(n:int)->int:
+    return 10%n
+
+try:
+    print(cal(n))
+
+except ZeroDivisionError: 
+    print("n값이 0입니다")
+    sys.exit()
+
+
+
+import sys
+
+if len(sys.argv) !=2:
+    print(f"#usage: python{sys.argv[0]}[txt]")
+    sys.exit()
+
+n= int(sys.argv[1])
+
+try:
+def cal(n:int)->int:
+    try:
+        result =  10%n
+    except ZeroDivisionError: 
+        result="n값이 0입니다"
+    return (result) 
+"""
+
+#5 5*4*3*2*1
+
+def factorial():
+    result = 1
+    num = 5
+
+    while num>0:
+        result *=num
+        num -=1
+    return result
+
+result = factorial()
+print(result)
+

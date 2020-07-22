@@ -14,7 +14,7 @@ class FASTA:
                 line = line.strip()
                 for s in line:
                     if s in self.count:
-                        self.count[s] +=1
+                        self.count[s]+=1
                     else:
                         self.count[s]=1
 
@@ -32,6 +32,7 @@ class FASTQ:
     def __init__(self, file_name:str):
         self.file_name =file_name
         self.read_num = 0
+        self.base={}
 
     def count_read_num(self):
         cnt = 0
@@ -42,6 +43,11 @@ class FASTQ:
                     self.read_num +=1
                 elif cnt %4 ==1:
                     seq = line.strip()
+                    for i in seq:
+                        if i in self.base:
+                            self.base[i] += 1
+                        else:
+                            self.base[i] =1
                 elif cnt %4 ==3:
                     qual = line.strip()
                 cnt +=1
@@ -62,3 +68,4 @@ if __name__ == "__main__":
    # t.get_length()
    # print(t.length)
    # print(len(t))
+    print(t.base)
